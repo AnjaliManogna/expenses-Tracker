@@ -3,44 +3,49 @@ import ExpenseItem from "./components/ExpenseItem";
 function App() {
   const expenses = [
     {
-      category: "Food",
-      amount: "Rs.10",
-      locationOfExpenditure: "Home",
+      id: "e1",
+      title: "Toilet Paper",
+      amount: 94.12,
+      date: new Date(2020, 7, 14),
     },
-    // Add more expense objects here as needed
-    // ...
+    { id: "e2", title: "New TV", amount: 799.49, date: new Date(2021, 2, 12) },
     {
-      category: "Petrol",
-      amount: "Rs.100",
-      locationOfExpenditure: "Gas station",
+      id: "e3",
+      title: "Car Insurance",
+      amount: 294.67,
+      date: new Date(2021, 2, 28),
     },
     {
-      category: "Movies",
-      amount: "Rs.200",
-      locationOfExpenditure: "Theatre",
+      id: "e4",
+      title: "New Desk (Wooden)",
+      amount: 450,
+      date: new Date(2021, 5, 12),
     },
   ];
 
-  const expenseItems = [];
-
-  for (let i = 0; i < expenses.length; i++) {
-    const expense = expenses[i];
-    expenseItems.push(
-      <ExpenseItem
-        key={i}
-        category={expense.category}
-        amount={expense.amount}
-        locationOfExpenditure={expense.locationOfExpenditure}
-      />
-    );
-  }
-
   return (
     <div>
-      <h2>
-        <center>EXPENSE ITEMS</center>{" "}
-      </h2>{" "}
-      {expenseItems}
+      <h2>Let's get started!</h2>
+      <ExpenseItem
+        title={expenses[0].title}
+        amount={expenses[0].amount}
+        date={expenses[0].date}
+      />
+      <ExpenseItem
+        title={expenses[1].title}
+        amount={expenses[1].amount}
+        date={expenses[1].date}
+      />
+      <ExpenseItem
+        title={expenses[2].title}
+        amount={expenses[2].amount}
+        date={expenses[2].date}
+      />
+      <ExpenseItem
+        title={expenses[3].title}
+        amount={expenses[3].amount}
+        date={expenses[3].date}
+      />
     </div>
   );
 }
