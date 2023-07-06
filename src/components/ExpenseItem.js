@@ -1,25 +1,19 @@
-function ExpenseItem() {
+import "./ExpenseItem.css";
+
+function ExpenseItem(props) {
+  const { category, amount, locationOfExpenditure } = props;
+
   return (
     <div className="expense-item">
-      {/* <div>Food</div>
-      <h2>car insurance</h2>
-      <div className="expense-item_price">$294.67</div> */}
-
-      <thead>
-        <tr>
-          <td>Food</td>
-          <td>Rs.10</td>
-        </tr>
-        <tr>
-          <td>petrol</td>
-          <td>Rs.100</td>
-        </tr>
-        <tr>
-          <td>Movies</td>
-          <td> Rs 200</td>
-        </tr>
-      </thead>
+      <div className="expense-item-row">
+        <div className="expense-item-category">{category}</div>
+        <div className="expense-item-amount">{amount}</div>
+      </div>
+      <div className="expense-item-row">
+        <div className="expense-item-location">{locationOfExpenditure}</div>
+      </div>
     </div>
   );
 }
+
 export default ExpenseItem;
